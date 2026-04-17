@@ -4,9 +4,9 @@
 This project predicts disease risk using machine learning.
 
 ## Day 1 Progress
-- Environment setup completed
 - Dataset loaded
-- Initial exploration done
+- Data exploration completed
+- Visualizations created
 
 ## Tech Stack
 - Python
