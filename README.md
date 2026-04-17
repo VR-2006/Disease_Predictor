@@ -85,6 +85,23 @@ The objective is to build an accurate and interpretable system for early disease
   * Confusion matrix
   * Classification report
 
+## Day 6 - Web Application
+
+- Developed an interactive web app using Streamlit  
+- Enabled real-time disease prediction based on user input  
+- Integrated trained Random Forest model  
+
+## Day 7 - Final Enhancements
+
+- Improved UI and usability  
+- Added prediction explanation  
+- Structured project for deployment  
+
+## Final Outcome
+- End-to-end machine learning pipeline  
+- Interactive application for real-time prediction  
+- Strong project suitable for portfolio and resume    
+
 #### Improvements
 
 * Random Forest captured more complex patterns
