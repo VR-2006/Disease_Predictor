@@ -1,5 +1,7 @@
 import pandas as pd
 
+print("Model and scaler saved successfully!")
+
 # Load dataset
 df = pd.read_csv('data/heart.csv')
 
@@ -49,7 +51,19 @@ from sklearn.ensemble import RandomForestClassifier
 rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
 rf_model.fit(X_train, y_train)
 
+import joblib
+
+joblib.dump(rf_model, "model.pkl")
+
+print("Model saved as model.pkl")
+
+import joblib
+
+joblib.dump(rf_model, "model.pkl")
+joblib.dump(scaler, "scaler.pkl")
+
 rf_pred = rf_model.predict(X_test)
+
 
 print("Random Forest Accuracy:", accuracy_score(y_test, rf_pred))
 

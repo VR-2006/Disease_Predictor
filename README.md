@@ -1,163 +1,115 @@
-# Disease Risk Predictor
+# AI-Based Cardiovascular Risk Assessment System
 
 ## Overview
 
-This project focuses on predicting the likelihood of heart disease using machine learning techniques. It includes data analysis, preprocessing, model development, and performance evaluation.
+This project presents a machine learning-based system designed to assess cardiovascular disease risk using clinical parameters.
 
-The objective is to build an accurate and interpretable system for early disease risk assessment.
+It integrates data preprocessing, model training, and an interactive Streamlit web application to provide real-time predictions along with clinical interpretation and visualization.
+
+The system simulates a basic clinical decision-support tool for early risk assessment.
+
+---
+
+## Features
+
+* Risk classification (Low / Moderate / High)
+* Probability-based risk estimation
+* Clinical interpretation of results
+* Feature importance analysis
+* Risk visualization using progress bar
+* Interactive user interface using Streamlit
 
 ---
 
 ## Tech Stack
 
 * Python
-* Pandas, NumPy
 * Scikit-learn
-* Matplotlib, Seaborn
-
----
-
-## Project Workflow
-
-### Day 1 — Exploratory Data Analysis (EDA)
-
-* Loaded and explored the dataset
-* Examined dataset structure, features, and statistical properties
-* Verified absence of missing values
-* Performed data visualization:
-
-  * Target distribution
-  * Age distribution
-  * Age vs Disease relationship
-  * Feature correlation heatmap
-
-#### Key Insights
-
-* Dataset is balanced with respect to target classes
-* Majority of individuals fall within the 45–65 age group
-* Age shows a strong relationship with disease presence
-* Certain features (e.g., chest pain type, heart rate) exhibit strong correlation
-
----
-
-### Day 2 — Data Preprocessing
-
-* Converted categorical variables into numeric format using one-hot encoding
-* Separated features (X) and target variable (y)
-* Performed train-test split (80% training, 20% testing)
-* Applied feature scaling using StandardScaler
-
-#### Outcome
-
-* Prepared a clean and structured dataset suitable for machine learning models
-* Established a preprocessing pipeline
-
----
-
-### Day 3 — Model Development
-
-* Implemented Logistic Regression
-* Trained model on training dataset
-* Evaluated using:
-
-  * Accuracy score
-  * Classification report
-
-#### Results
-
-* Achieved approximately 82% accuracy
-* High recall for disease detection (~88%)
-* Balanced performance across classes
-
-#### Insight
-
-* Model effectively identifies disease cases, which is important for medical applications
-
----
-
-### Day 4 — Model Improvement and Evaluation
-
-* Implemented Random Forest Classifier
-* Compared performance with Logistic Regression
-* Evaluated using:
-
-  * Accuracy comparison
-  * Confusion matrix
-  * Classification report
-
-## Day 6 - Web Application
-
-- Developed an interactive web app using Streamlit  
-- Enabled real-time disease prediction based on user input  
-- Integrated trained Random Forest model  
-
-## Day 7 - Final Enhancements
-
-- Improved UI and usability  
-- Added prediction explanation  
-- Structured project for deployment  
-
-## Final Outcome
-- End-to-end machine learning pipeline  
-- Interactive application for real-time prediction  
-- Strong project suitable for portfolio and resume    
-
-#### Improvements
-
-* Random Forest captured more complex patterns
-* Improved robustness of predictions
-* Enhanced overall model performance
-
-#### Evaluation Insight
-
-* Confusion matrix provided detailed understanding of correct and incorrect classifications
-
----
-
-## Current Status
-
-* Data exploration completed
-* Data preprocessing pipeline established
-* Baseline and improved models implemented
-* Model performance evaluated
-
----
-
-## Next Steps
-
-* Feature importance analysis
-* Model interpretability enhancements
-* Deployment using a web interface
+* Pandas, NumPy
+* Streamlit
 
 ---
 
 ## Project Structure
 
-```bash
 Disease_Predictor/
-│
+├── app/
+│   └── app.py
 ├── data/
 │   └── heart.csv
-│
 ├── notebooks/
-│   ├── eda.py
-│   ├── preprocessing.py
-│   ├── model.py
-│   ├── model_improvement.py
-│
-├── README.md
+├── model.pkl
+├── scaler.pkl
 ├── requirements.txt
-```
+├── README.md
+├── app_screenshot.png
 
 ---
 
-## Key Takeaway
+## Example Usage
 
-This project demonstrates a complete machine learning pipeline, from raw data processing to model evaluation and improvement.
+### Low Risk Input
+
+* Age: 30
+* Sex: Female
+* Chest Pain Type: Non-anginal Pain
+* Resting Blood Pressure: 110 mmHg
+* Cholesterol: 180 mg/dl
+* Fasting Blood Sugar: No
+* Rest ECG: Normal
+* Max Heart Rate: 170 bpm
+* Exercise Induced Angina: No
+
+Expected Output: **Low Risk of Cardiovascular Disease**
+
+---
+
+### High Risk Input
+
+* Age: 60
+* Sex: Male
+* Chest Pain Type: Asymptomatic
+* Resting Blood Pressure: 160 mmHg
+* Cholesterol: 300 mg/dl
+* Fasting Blood Sugar: Yes
+* Rest ECG: ST-T Abnormality
+* Max Heart Rate: 100 bpm
+* Exercise Induced Angina: Yes
+
+Expected Output: **High Risk of Cardiovascular Disease**
+
+---
+
+## Note
+
+Default values are used for certain clinical parameters (oldpeak, slope, vessels, thalassemia) to ensure stable predictions due to dataset limitations.
+
+---
+
+## Limitations
+
+* Based on a limited dataset (UCI Heart Disease Dataset)
+* Not clinically validated
+* Intended for educational and demonstration purposes only
+
+---
+
+## Application Preview
+
+![App Screenshot](app_screenshot.png)
+
+---
+
+## How to Run
+
+```bash
+pip install -r requirements.txt
+streamlit run app/app.py
+```
 
 ---
 
 ## Author
 
-Vignesh R
+Vignesh Ram R
 Biomedical Engineering Student
